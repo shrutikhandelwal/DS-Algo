@@ -1,0 +1,19 @@
+class Solution:
+    def decompressRLElist(self, nums: List[int]) -> List[int]:
+        
+        i = 0
+        j = 1
+        decompressList = []
+        
+        while i <= len(nums) - 2:
+            decompressCounter = nums[i]
+           
+            while decompressCounter != 0:
+                decompressList.append(nums[j])
+                decompressCounter = decompressCounter - 1  
+            i = i + 2
+            j = j + 2
+            
+        return decompressList        
+            
+        
